@@ -13,7 +13,7 @@ func LogInHandler(w http.ResponseWriter, r *http.Request) {
 	user := uadmin.User{}
 
 	if session != nil {
-		http.Redirect(w, r, "/dashboard", http.StatusSeeOther)
+		http.Redirect(w, r, "/pudding/", http.StatusSeeOther)
 		return
 	}
 
@@ -34,7 +34,7 @@ func LogInHandler(w http.ResponseWriter, r *http.Request) {
 				Name:  "session",
 				Value: session.Key,
 			})
-			http.Redirect(w, r, "/dashboard", http.StatusSeeOther)
+			http.Redirect(w, r, "/pudding", http.StatusSeeOther)
 		} else {
 			if username == "" && password != "" {
 				data["err_username"] = "Enter your username"

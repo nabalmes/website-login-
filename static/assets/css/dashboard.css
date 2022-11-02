@@ -24,7 +24,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    background: #fff;
+    background: #ebebeb;
 
     z-index: 10;
 }
@@ -43,14 +43,17 @@ body.active {
 .navbar__link {
     color: #fff;
     text-decoration: none;
+    letter-spacing: 2px;
     padding: 0rem 1rem;
 
     font-weight: 600;
-
+    /* transition: all 250ms ease-out; */
 }
 
 .navbar__link:hover {
-    color: rgb(18, 18, 218);
+    color: rgba(100, 100, 196, 0.747);
+    backdrop-filter: blur(3px);
+    /* transition: all 250ms ease-in; */
 }
 
 .navbar__link {
@@ -59,16 +62,17 @@ body.active {
     justify-content: center;
 
     height: 100%;
-    max-height: 60px;
+    width: 100%;
 
     cursor: pointer;
     z-index: 99;
 }
 
 .navbar__menu {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(5 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     position: absolute;
     width: 100%;
     top: -1000px;
@@ -78,9 +82,10 @@ body.active {
 .navbar__menu.active {
     top: 100%;
     opacity: 1;
-    height: 100vh;
+    height: calc(100vh - 60px);
     font-size: 1.5rem;
-    background:  #030113;
+    background: #030113c2;
+    backdrop-filter: blur(5px);
 
     z-index: 99;
 }
@@ -167,11 +172,11 @@ body.active {
     border-radius: 10px;
     border: 1px solid black;
     outline: none;
-    padding: 0 70px 0 30px;
+    padding: 0 70px 0 50px;
 }
 
 .section-cards__container {
-    height: 100%;
+    height: calc(100% - 81px);
     width: 100%;
 
     display: flex;
@@ -179,14 +184,33 @@ body.active {
     flex-direction: column;
     align-items: center;
 
-    padding: 10px 10px 100px 10px;
+    padding: 15px 10px;
     overflow: auto;
 }
 
+.section-cards__container::-webkit-scrollbar {
+    width: 2px;
+    border-radius: 10px;
+    background: black;
+}
+
+.section-cards__container::-webkit-scrollbar-track {
+    background: rgba(243, 243, 243, 0.781);
+}
+
+.section-cards__container::-webkit-thumb {
+    width: rgb(32, 26, 26);
+}
+
+.section-cards__container::-webkit-scrollbar-thumb:hover {
+    background: #1c1b5c;
+}
+
 .cards-wrapper {
+    width: 100%;
     border: 1px solid rgb(131, 122, 122);
     border-radius: 10px;
-    padding: 10px;
+    padding: 30px 10px;
 }
 
 .cards-wrapper p {
@@ -218,8 +242,38 @@ body.active {
     font-size: 12px;
 
     color: #fff;
-    background: #3C3939;
+    background: #1c1b5c;
     border: none;
     border-radius: 5px;
     padding: 2px;
 }
+
+
+
+/* #EMPLOYEE */
+
+.section-employee .cards-wrapper {
+    display: flex;
+    gap: 1.5rem;
+
+    background: #f0f8fffc;
+    border: transparent;
+
+    box-shadow:0px 1px 13px -5px rgb(0 0 0 / 38%);
+    -webkit-box-shadow: 0px 1px 13px -5px rgb(0 0 0 / 38%);
+    -moz-box-shadow: 0px 1px 13px -5px rgb(0 0 0 / 38%);
+}
+
+.cards-wrapper .card-img img {
+    height: 120px;
+    width: 120px;
+
+    border-radius: 50%;
+}
+
+.cards-details h5 {
+    font-weight: 100;
+    line-height: 2;
+}
+
+

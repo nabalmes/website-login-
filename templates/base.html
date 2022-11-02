@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="integritynet">
+    <meta name="description" content="pudding mobile">
+  
+    <meta property="og:title" content="pudding mobile">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../static/assets/img/pudding-logo">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="A pudding mobile app monitoring">
+
+    <link rel="stylesheet" href="../static/assets/css/login.css">
+    <link rel="stylesheet" href="../static/assets/css/login_index.css">
+    <link rel="stylesheet" href="../static/assets/css/dashboard.css">
+    
+</head>
+<body>
+    <header class="pudding-dashboard__header">
+        <img src="../static/assets/images/logo.svg" alt="logo">
+        <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span> 
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="navbar__menu">
+            <a href="/pudding/deliveries" class="navbar__link">Delivery</a>
+            <a href="/pudding/employee" class="navbar__link">Employee</a>
+            <a href="/" class="navbar__link">Location</a>
+            <a href="/" class="navbar__link">Tag</a>
+            <a href="/" class="navbar__link">Settings</a>
+            <a href="/logout" class="navbar__link">Log Out</a>
+        </div>
+    </header>
+    <section class="dashboard-section">
+        <div class="section-header">
+            DELIVERIES
+        </div>
+            {{template "content" .}}
+        <!-- <div class="search-bar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#483c3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" placeholder="Search Deliveries here">
+            <button>SEARCH</button>
+        </div>
+        <div class="setion-deliveries section-cards__container">
+            <div class="cards-wrapper">
+                <h4>Item #1</h4>
+                <hr>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia reprehenderit tenetur, beatae velit omnis ea tempora, nesciunt dolores facere praesentium quod! Distinctio, voluptatibus eveniet quidem mollitia impedit soluta ad assumenda?</p>
+                <div class="buttons-container">
+                    <button>START</button>
+                    <button>END</button>
+                </div>
+            </div>
+
+            <div class="cards-wrapper">
+                <h4>item #2</h4>
+                <hr>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia reprehenderit tenetur, beatae velit omnis ea tempora, nesciunt dolores facere praesentium quod! Distinctio, voluptatibus eveniet quidem mollitia impedit soluta ad assumenda?</p>
+                <div class="buttons-container">
+                    <button>START</button>
+                    <button>END</button>
+                </div>
+            </div>
+
+            <div class="cards-wrapper">
+                <h4>Item #3</h4>
+                <hr>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia reprehenderit tenetur, beatae velit omnis ea tempora, nesciunt dolores facere praesentium quod! Distinctio, voluptatibus eveniet quidem mollitia impedit soluta ad assumenda?</p>
+                <div class="buttons-container">
+                    <button>START</button>
+                    <button>END</button>
+                </div>
+            </div>
+
+            <div class="cards-wrapper">
+                <h4>Item #4</h4>
+                <hr>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia reprehenderit tenetur, beatae velit omnis ea tempora, nesciunt dolores facere praesentium quod! Distinctio, voluptatibus eveniet quidem mollitia impedit soluta ad assumenda?</p>
+                <div class="buttons-container">
+                    <button>START</button>
+                    <button>END</button>
+                </div>
+            </div>
+        </div> -->
+    </section>
+    
+</body>
+<script>
+const menu = document.getElementById('mobile-menu');
+const menuLinks = document.querySelector('.navbar__menu');
+const navLogo = document.getElementById('navbar__logo');
+const body = document.querySelector('body');
+
+
+// Display menu - Mobileview
+
+const mobileMenu = function() {
+    menu.classList.toggle('is-active');
+    menuLinks.classList.toggle('active');
+    body.classList.toggle('active')
+
+}
+
+menu.addEventListener('click', mobileMenu)
+
+</script>
+</html>

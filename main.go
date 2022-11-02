@@ -34,8 +34,7 @@ func RegisterHandlers() {
 	http.HandleFunc("/", uadmin.Handler(views.LandingPageHandler))
 	http.HandleFunc("/login", uadmin.Handler(views.LogInHandler))
 	http.HandleFunc("/logout", uadmin.Handler(views.LogOutHandler))
-	http.HandleFunc("/dashboard", uadmin.Handler(views.DashboardHandler))
-
+	http.HandleFunc("/pudding", uadmin.Handler(views.PuddingHandler))
 }
 
 func ServerStart() {
